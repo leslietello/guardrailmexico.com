@@ -1,0 +1,680 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consorcio Roisrose</title>
+    <!-- Favicon -->
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2554/2554922.png" type="image/png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+        .logo img {
+            height: 40px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            background: url('https://static.wixstatic.com/media/2d2b9b_b785fec1e9434fa5bb2ae7071077b402~mv2.jpg/v1/fit/w_2500,h_1330,al_c/2d2b9b_b785fec1e9434fa5bb2ae7071077b402~mv2.jpg') no-repeat center center/cover;
+            height: 530px;
+            display: flex;
+            flex-direction: column;
+¿+}         justify-content: center
+            align-items: center;
+            color: black;
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;
+            animation: fadeIn 2s ease-in-out infinite alternate;
+        }
+        .hero button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 20px;
+            color: white;
+            background-color: #333;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .hero button:hover {
+            background-color: #555;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0.5; }
+            to { opacity: 1; }
+        }
+        .section {
+            padding: 50px;
+            text-align: center;
+        }
+        .services-title {
+            background-color: #FF6F00;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .contact {
+            background-color: #f4f4f4;
+            padding: 50px;
+            text-align: center;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .services {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            padding: 50px;
+            flex-wrap: wrap;
+        }
+        .services img {
+            max-width: 50%;
+            border-radius: 10px;
+        }
+        .text {
+            max-width: 50%;
+            text-align: left;
+            font-size: 18px;
+        }
+        .bullet {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        h2 {
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+            color: #FF7F00;
+        }
+        h3, h4 {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .features {
+            background-color: #f5f5f5;
+            padding: 50px;
+        }
+        .features h2 {
+            font-size: 36px;
+            color: #FF7F00;
+        }
+        .features h3 {
+            color: black;
+            font-size: 30px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .features ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            text-align: left;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .new-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            padding: 50px;
+            flex-wrap: wrap;
+        }
+        .new-section img {
+            max-width: 500%;
+            border-radius: 60px;
+        }
+        .new-section .text {
+            max-width: 50%;
+            text-align: left;
+            font-size: 18px;
+        }
+        .new-section h2 {
+            font-size: 36px;
+            color: #FF7F00;
+        }
+        .new-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        /* Nueva sección Sistema ET PLUS */
+        .system-etplus {
+            background-color: #f5f5f5;
+            padding: 50px;
+        }
+        .system-etplus h2 {
+            font-size: 36px;
+            color: #FF7F00;
+            text-align: center;
+        }
+        .system-etplus h3 {
+            font-size: 24px;
+            text-align: left;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .system-etplus .text {
+            font-size: 18px;
+            text-align: left;
+        }
+        .system-etplus ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        /* Estilos para imagen de la nueva sección */
+        .image-left {
+            max-width: 55%;
+        }
+        /* Nueva sección Defensa Metálica */
+        .defensa-metalica {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            padding: 50px;
+            flex-wrap: wrap;
+        }
+        .defensa-metalica img {
+            max-width: 50%;
+            border-radius: 10px;
+        }
+        .defensa-metalica .text {
+            max-width: 50%;
+            text-align: left;
+            font-size: 18px;
+        }
+        .defensa-metalica h2 {
+            color: #FF7F00;
+            text-align: center;
+        }
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .hero {
+                height: 400px;
+                font-size: 28px;
+            }
+            .services img, .new-section img, .image-left {
+                max-width: 100%;
+            }
+            .services {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .text {
+                max-width: 100%;
+                text-align: center;
+                font-size: 16px;
+            }
+            .new-section {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .defensa-metalica {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardboard Bale</title>
+    <style>" 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+        .logo img {
+            height: 40px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            background: url('https://static.wixstatic.com/media/2d2b9b_b785fec1e9434fa5bb2ae7071077b402~mv2.jpg/v1/fit/w_2500,h_1330,al_c/2d2b9b_b785fec1e9434fa5bb2ae7071077b402~mv2.jpg') no-repeat center center/cover;
+            height: 530px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;
+            animation: fadeIn 2s ease-in-out infinite alternate;
+        }
+        .hero button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 20px;
+            color: white;
+            background-color: #333;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .hero button:hover {
+            background-color: #555;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0.5; }
+            to { opacity: 1; }
+        }
+        .section {
+            padding: 50px;
+            text-align: center;
+        }
+     .services-title {
+    background-color: #FF6F00; /* Fondo naranja fuerte */
+    color: #FFFFFF; /* Texto blanco */
+    padding: 10px 20px;
+    text-align: center;
+    font-size: px; /* Ajusta el tamaño de fuente según sea necesario */
+    font-weight: bold; /* Puedes ajustar esto si deseas que el título sea más destacado */
+}
+
+        .contact {
+            background-color: #f4f4f4;
+            padding: 50px;
+            text-align: center;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .services {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            padding: 50px;
+        }
+        .services img {
+            max-width: 50%;
+            border-radius: 100px;
+        }
+        .text {
+            max-width: 50%;
+            text-align: left;
+            font-size: 18px;
+        }
+        .bullet {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        h2 {
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+            color: #FF7F00; /* Naranja fuerte */
+        }
+        h3, h4 {
+            font-size: 24px; /* Títulos más pequeños */
+            font-weight: bold;
+            text-align: center;
+        }
+        .features {
+            background-color: #f5f5f5; /* Gris claro */
+            padding: 50px;
+        }
+        .features h2 {
+            font-size: 36px;
+            color: #FF7F00; /* Naranja fuerte */
+        }
+        .features h3 {
+            color: black;
+            font-size: 30px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .features ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            text-align: left;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .new-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            padding: 50px;
+        }
+        .new-section img {
+            max-width: 500%;
+            border-radius: 60px;
+        }
+        .new-section .text {
+            max-width: 50%;
+            text-align: left;
+            font-size: 18px;
+        }
+        .new-section h2 {
+            font-size: 36px;
+            color: #FF7F00;
+        }
+        .new-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        /* Nueva sección Sistema ET PLUS */
+        .system-etplus {
+            background-color: #f5f5f5; /* Gris claro */
+            padding: 50px;
+        }
+        .system-etplus h2 {
+            font-size: 36px;
+            color: #FF7F00; /* Naranja fuerte */
+            text-align: center;
+        }
+        .system-etplus h3 {
+            font-size: 24px;
+            text-align: left;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .system-etplus .text {
+            font-size: 18px;
+            text-align: left;
+        }
+        .system-etplus ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        /* Estilos para imagen de la nueva sección */
+        .image-left {
+            max-width: 55%;
+        }
+/* Nueva sección Defensa Metálica */
+        .defensa-metalica {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            padding: 50px;
+        }
+        .defensa-metalica img {
+            max-width: 50%;
+            border-radius: 10px;
+        }
+        .defensa-metalica .text {
+            max-width: 50%;
+            text-align: left;
+            font-size: 18px;
+        }
+        .defensa-metalica h2 {
+            color: #FF7F00;
+            text-align: center;
+        }
+    </style>
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="https://thumbs.dreamstime.com/b/logo-de-construcci%C3%B3n-carreteras-mantenimiento-creativo-signo-concepto-pavimentaci%C3%B3n-la-plantilla-dise%C3%B1o-icono-vectorial-idea-164696706.jpg" alt="Cardboard Bale"></div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#quienes-somos">Quiénes Somos</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#cotizar">Cotizar</a></li>
+ <li><a href="#contacto" onclick="document.getElementById('cotizar').scrollIntoView({behavior: 'smooth'});">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="hero">
+        Bienvenido a Consorcio Roisrose
+        <a href="#servicios"><button>Ver nuestro catálogo</button></a>
+    </div>
+  
+
+<section id="quienes-somos" class="quienes-somos" style="background-color: #000000; color: #FFFFFF; padding: 50px;">
+    <div style="text-align: center;">
+        <h2 style="font-size: 40px; color: #FF7F00;">¿Quiénes somos?</h2>
+        <p style="font-size: 18px; margin-top: 20px;">
+            En Consorcio Roisrose nos especializamos en la venta y distribución de productos para la infraestructura vial, como sistemas de contención, defensas métalicas, terminales de amortiguamiento, etc...
+        </p>
+        <p style="font-size: 18px; margin-top: 20px;">
+            Somos una empresa con más de 3 años de experiencia en el sector, ofrecemos soluciones de alta calidad, diseñadas para mejorar la seguridad y durabilidad de las carreteras. Nuestro compromiso con la excelencia y la innovación nos ha permitido posicionarnos como un referente confiable para nuestros clientes, siempre buscando adaptarnos a sus necesidades y ofrecerles productos que cumplan con los más altos estándares de calidad.
+        </p>
+        <p style="font-size: 18px; margin-top: 20px;">
+            Nuestros productos son de Alta calidad con Certificados de calidad.
+        </p>
+    </div>
+</section>
+
+
+
+
+    <section id="servicios">
+        <div class="services-title">Nuestros Servicios</div>
+        <div class="services">
+            <img src="https://tsigns.com.mx/cwsitio/wp-content/uploads/2020/04/terminales-TS3-safe-terminal-DH-01.jpg" alt="Imagen de servicios">
+            <div class="text">
+                <ul class="bullet">
+                    <li><h2><span style="list-style-type: disc; padding-left: 20px;">•</span>Terminales de Amortiguamiento</h2></li>
+                </ul>
+                <br>
+                <h3>TERMINAL SEGURA NCHRP 350 NC3</h3>
+                <br>
+                <p>La TS3 Terminal DH es un dispositivo de absorción de energía que se instala paralelo al camino, por lo que no es necesario un acotamiento amplio.</p>
+                <br>
+                <h4>TS3 SAFE Terminal DH</h4>
+                <br>
+                <p>Validada bajo los criterios del NCHRP 350 Nivel de contención 3. En impactos frontales, el cabezal de la TS3 Terminal DH se comporta como un deflector.</p>
+                <p>Cuando la doble cabeza de impacto es golpeada de frente, la defensa metálica es forzada a entrar en la cabeza, desviándose en sentido contrario a la dirección del vehículo que se está impactando.</p>
+                <p>La defensa metálica sale de una manera segura del doble cabezal de impacto siendo extruida y enroscada, de esta forma el vehículo se puede detener controladamente.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Características y Beneficios -->
+    <section class="features">
+        <h2><span style="list-style-type: disc; padding-left: 20px;">•</span>CARACTERÍSTICAS Y BENEFICIOS</h2>
+        <h3>TERMINAL SEGURA NCHRP 350 NC3</h3>
+        <ul>
+            <li>En la mayoría de los impactos los componentes de la terminal son reusables en un 80%, lo que reduce considerablemente los costos por mantenimiento.</li>
+            <li>La energía requerida para desplazar el cabezal de impacto y forzar la defensa metálica hacia el mismo es más bajo que otras terminales de colocación paralelas al camino.</li>
+            <li>El cabezal de impacto es significativamente más fácil de remover de la defensa metálica.</li>
+            <li>El diseño refinado y actualizado sobre la tecnología más antigua de la barrera metálica mejora la eficiencia del desempeño en el impacto.</li>
+            <li>La doble cabeza de impacto más larga da como resultado una mejor terminal, garantizando un mejor desahogo de la barrera.</li>
+            <li>Probadas en nivel de prueba 3 del NCHRP 350.</li>
+            <li>Al ser una barrera que se instala paralelamente al camino, es posible su colocación en hombros de la carretera demasiado angostos.</li>
+        </ul>
+    </section>
+
+    <!-- Sección Sistema de Contención MC3-TL4 -->
+    <section class="new-section">
+        <div class="image-left">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStAwwPQEDQ_m7RdE1vG658yNOF3Zz3-EJWZA&s" alt="Sistema de Contención MC3-TL4">
+        </div>
+        <div class="text">
+            <h2><span style="list-style-type: disc; padding-left: 20px;">•</span>Sistema de contención MC3-TL4</h2>
+            <p>El Sistema de Contención MC3-TL4 está diseñado para instalarse al margen de una autopista que requiera contener vehículos ligeros, pesados y camiones que pierdan el control ante un accidente, siendo capaz de absorber la energía, evitando daños graves, caídas a desniveles o invasión a carriles contrarios.</p>
+            <ul>
+                <li>Deflexión dinámica de 120 cm</li>
+                <li>Sistema fácil de instalar</li>
+                <li>Es el sistema más ligero del mercado</li>
+                <li>Sistema ensayado y acreditado en laboratorio de pruebas</li>
+                <li>Aprobado por la dirección general de servicios técnicos de la SCT</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Sección Sistema ET Plus -->
+    <section class="system-etplus">
+        <h2><span style="list-style-type: disc; padding-left: 20px;">•</span>Sistema ET PLUS</h2>
+        <div class="new-section">
+            <div class="image-left">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZPqhXpe6mg1hKbnywoEEMnn66qELRCa6x5A&s" alt="Sistema ET Plus">
+            </div>
+            <div class="text">
+                <p>El sistema ET Plus es una terminal de amortiguamiento que puede ser utilizado en los costados o en la mediana de la carretera (carriles centrales). Es una terminal de defensa con un precio competitivo.</p>
+                <h3>Características</h3>
+                <p>El cabezal extrusor del ET PLUS es potencialmente reusable después del impacto. La decisión de reutilizar el cabezal depende de la autoridad de carreteras correspondientes.</p>
+                <p>Existen diferentes opciones de lámina reflectiva de acuerdo al estándar MUTCD.</p>
+                <h3>Especificaciones</h3>
+                <ul>
+                    <li>Opción A: TL-2: 7.62 m</li>
+                    <li>Opción B: TL-3: 15.24 m</li>
+                </ul>
+                <p>Espaciamiento entre postes: 1.905 m</p>
+                <p>Punto de redirección desde la cabeza: 3.81 m</p>
+                <h3>Armado y mantenimiento:</h3>
+                <p>100% Galvanizado en caliente, reduce los riesgos de corrosión y degradación por exposición ambiental.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+<section class="defensa-metalica">
+    <div style="display: flex; align-items: center; justify-content: center; gap: 50px; padding: 50px;">
+        <img src="https://static.wixstatic.com/media/849c36_25d2d4b2468441c0a1e17166ce974567~mv2.jpg/v1/fill/w_980,h_551,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/D3_4_JPG.jpg" alt="Defensa Metálica" style="max-width: 25%; border-radius: 20px;">
+        <div class="text" style="max-width: 50%; text-align: left; font-size: 18px;">
+            <h2 style="color: #FF7F00; text-align: center;">• Defensa Metálica</h2>
+            <p>Con este diseño de defensa se le brinda al usuario un mayor nivel de seguridad, garantizando que en la mayoría de los impactos haya un redireccionamiento controlado y sin riesgo para los ocupantes. Esto es debido a la aceleración de energía ejercida al momento del impacto.</p>
+            <br>
+            <h4 style="font-size: 20px; font-weight: bold; color: #FF7F00; text-align: center;">Características</h4>
+            <ul style="font-size: 18px; list-style-type: disc; padding-left: 20px;">
+                <li>Material: Acero A.R. H55 (Alta Resistencia)</li>
+                <li>Espesor Nominal: 2.67 mm (Cal. 12)</li>
+                <li>Longitud Total: 4128 mm</li>
+                <li>Longitud Útil: 3810 mm</li>
+                <li>Paso: 193.8 mm</li>
+                <li>Profundidad: 82.6 mm</li>
+                <li>Esfuerzo de cedencia FY: 50,000 lb/pulg ^2</li>
+                <li>Esfuerzo de Ruptura FU: 70,000 lbs/pulg ^2</li>
+                <li>Elongación: 12%</li>
+                <li>Acabado: Galvanizado por inmersión en caliente bajo norma ASTM A-123 Tipo 1</li>
+            </ul>
+            <br>
+            <h4 style="font-size: 20px; font-weight: bold; color: #FF7F00; text-align: center;">Defensas metálicas bajo los siguientes criterios</h4>
+            <ul style="font-size: 18px; list-style-type: disc; padding-left: 20px;">
+                <li>NORMA OFICIAL MEXICANA "NOM-037-SCT2-2012"</li>
+                <li>NIVELES DE CONTENCIÓN 3 Y 4 "NC-3 Y NC-4"</li>
+                <li>NIVEL DE PRUEBAS 3 Y 4 DEL REPORTE 350 DE LA NCHRP "TL-3 Y TL-4" y MASH</li>
+                <li>APROBADAS POR LA FEDERAL HIGHWAY ADMINISTRATION "FHWA"</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="sistema-contencion" style="background-color: #f5f5f5;">
+    <div class="new-section" style="display: flex; justify-content: center; align-items: center; gap: 50px; padding: 50px;">
+        <div class="image-left" style="text-align: center;">
+            <img src="https://afinsuministros.cl/wp-content/uploads/2023/03/sistemas-de-contencion.jpg" alt="Sistema de Contención" style="max-width: 50%; border-radius: 20px;">
+        </div>
+        <div class="text" style="text-align: left;">
+            <h2 style="color: #FF7F00; text-align: center; font-size: 36px; font-weight: bold; margin-top: 20px;"><span style="list-style-type: disc; padding-left: 20px;">•</span> Sistema de Contención para Vehículos AS-TL4.A</h2>
+            <br>
+            <p>Barrera metálica simple reducida para borde lateral. Sistema compuesto por una barrera de doble onda y postes C distanciados 2,66 metros entre sí.</p>
+            <br>
+            <h4 style="font-size: 20px; font-weight: bold; color: #FF7F00; text-align: center;">Características</h4>
+            <br>
+            <ul style="font-size: 18px; list-style-type: disc; padding-left: 20px;">
+                <li>Nivel de contención: TL-3 y TL-4</li>
+                <li>Deflexión dinámica: 1,30</li>
+                <li>Severidad: Preferred</li>
+            </ul>
+        </div>
+    </div>
+
+
+
+</section>
+
+
+<section id="cotizar" style="text-align: center; padding: 50px; background-color: #f9f9f9;">
+    <h2 style="color: #FF7F00; font-size: 36px; font-weight: bold;">CONTÁCTANOS</h2>
+    <p style="font-size: 18px; margin-top: 20px;">Para más información o cotizaciones, ponte en contacto con nosotros.</p>
+    <a href="https://wa.me/525610205711" target="_blank" 
+       style="display: inline-flex; align-items: center; justify-content: center; 
+              margin-top: 20px; padding: 15px 20px; font-size: 18px; color: #fff; 
+              background-color: #25D366; text-decoration: none; border-radius: 50%; 
+              text-align: center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+              transition: all 0.3s ease-in-out;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+             alt="WhatsApp" style="width: 25px; height: 25px; margin-right: 10px;">
+        COTIZAR
+    </a>
+</section>
+
+
+
+
+
+    <footer>
+        <p>© 2025 Consorcio Roisrose</p>
+    </footer>
+</body>
+</html>
